@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+// Import the image at the top of your file
+import profileImage from '../assets/profile-placeholder.jpg';
 
 const Hero = () => {
   useEffect(() => {
@@ -67,29 +69,18 @@ const Hero = () => {
               <div className="orbit-dot dot-5"></div>
               <div className="orbit-dot dot-6"></div>
               
-              {/* Main photo */}
+              {/* Main photo - UPDATED TO USE IMPORTED IMAGE */}
               <div className="photo-frame">
                 <div className="photo-border">
                   <div className="photo-inner">
                     <img 
-                      src="/src/assets/profile-placeholder.jpg" 
+                      src={profileImage} 
                       alt="Ashish Jha" 
                       className="profile-image"
                     />
                   </div>
                 </div>
               </div>
-              
-              {/* Tech skill badges */}
-              {/* <div className="skill-badge ai-badge">
-                <span>AI</span>
-              </div>
-              <div className="skill-badge ml-badge">
-                <span>ML</span>
-              </div>
-              <div className="skill-badge dev-badge">
-                <span>Dev</span>
-              </div> */}
             </div>
           </div>
         </div>
@@ -229,51 +220,6 @@ const Hero = () => {
           animation-delay: 5s;
         }
         
-        /* Skill badges */
-        .skill-badge {
-          position: absolute;
-          padding: 8px 15px;
-          background: white;
-          border-radius: 20px;
-          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-          z-index: 10;
-          font-weight: bold;
-          transition: all 0.3s ease;
-          border: 2px solid transparent;
-        }
-        
-        .skill-badge:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        // .ai-badge {
-        //   top: 60px;
-        //   right: 40px;
-        //   background: linear-gradient(to right, rgba(110, 142, 251, 0.2), rgba(167, 119, 227, 0.2));
-        //   border-color: #6e8efb;
-        //   color: #6e8efb;
-        //   animation: float 4s ease-in-out infinite;
-        // }
-        
-        // .ml-badge {
-        //   bottom: 60px;
-        //   right: 70px;
-        //   background: linear-gradient(to right, rgba(167, 119, 227, 0.2), rgba(110, 142, 251, 0.2));
-        //   border-color: #a777e3;
-        //   color: #a777e3;
-        //   animation: float 4s ease-in-out infinite 1s;
-        // }
-        
-        // .dev-badge {
-        //   bottom: 100px;
-        //   left: 50px;
-        //   background: linear-gradient(to right, rgba(110, 142, 251, 0.2), rgba(167, 119, 227, 0.2));
-        //   border-color: #6e8efb;
-        //   color: #6e8efb;
-        //   animation: float 4s ease-in-out infinite 2s;
-        // }
-        
         /* Animations */
         @keyframes rotate {
           from {
@@ -312,15 +258,6 @@ const Hero = () => {
         @keyframes orbit-6 {
           from { transform: rotate(300deg) translateX(160px) rotate(-300deg); }
           to { transform: rotate(660deg) translateX(160px) rotate(-660deg); }
-        }
-        
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
         }
         
         @keyframes pulse {
