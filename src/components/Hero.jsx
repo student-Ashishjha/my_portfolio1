@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import profileImage from '../assets/profile-placeholder.jpg';
+
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -65,15 +67,23 @@ const Hero = () => {
               I create innovative applications using cutting-edge AI technologies.
             </p>
             
-            <div className="cta-buttons">
-              <button className="btn-primary">
-                 <div className="d-flex gap-3 justify-content-lg-start justify-content-center">
-              <a href="#contact" className="btn btn-glow btn-lg px-4 py-2">Contact Me</a>
-              <a href="#projects" className="btn btn-glow btn-lg px-4 py-2">View Projects</a>
-            </div>
-              </button>
-             
-            </div>
+          <div className="cta-buttons">
+ <button className="btn-primary" onClick={() => window.open('https://github.com/student-Ashishjha', '_blank')}>
+   <span>GitHub Portfolio</span>
+   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1S4.64 3.42 4.5 4.77 3.36 7.29 3.36 9.75c0 5.43 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 19.13V22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+   </svg>
+ </button>
+ <button className="btn-secondary" onClick={() => window.open('https://www.linkedin.com/in/ashish-jha-b2751a31a', '_blank')}>
+   <span>LinkedIn Profile</span>
+   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+     <rect x="2" y="9" width="4" height="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+     <circle cx="4" cy="4" r="2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+   </svg>
+ </button>
+ 
+</div>
             
             
           </div>
@@ -82,7 +92,7 @@ const Hero = () => {
             <div className="image-container">
               <div className="image-wrapper">
                 <img 
-                  src="src/assets/profile-placeholder.jpg" 
+                  src={profileImage} 
                   alt="Ashish Jha" 
                   className="profile-image"
                 />
