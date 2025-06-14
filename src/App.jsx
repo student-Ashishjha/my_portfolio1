@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './App.css';
@@ -11,9 +12,24 @@ import Contact from './components/Contact';
 // import Footer from './components/Footer';
 
 function App() {
+  useEffect(() => {
+    const handleNavigateToContact = () => {
+      const contactElement = document.getElementById('contact');
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    window.addEventListener('navigateToContact', handleNavigateToContact);
+
+    return () => {
+      window.removeEventListener('navigateToContact', handleNavigateToContact);
+    };
+  }, []);
+
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <About />
       <Skills />
